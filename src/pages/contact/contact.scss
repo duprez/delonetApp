@@ -1,0 +1,55 @@
+page-contact {
+  ion-header {
+    .toolbar-background {
+      background-color: #1d8fc7;
+    }
+    .toolbar-title-md,
+    .bar-button-default-md,
+    .toolbar-title-ios,
+    .bar-button-default-ios {
+      color: white;
+    }
+  }
+  .content-md, .content-ios {
+    background-color: rgb(255, 255, 255);
+  }
+  .scroll-content {
+    padding: 0 !important;
+  }
+  ion-content {
+    margin-top: 25px;
+    h1 {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .item-ios, .item-md {
+      padding-right: 16px;
+      ion-label {
+        color: #a9a7ac;
+      }
+      textarea.text-input.text-input-md,
+      textarea.text-input.text-input-ios {
+        margin-bottom: -7px;
+      }
+      .item-button {
+        color: white;
+        font-size: 1.6rem;
+        height: 32px;
+        width: 100%;
+        font-weight: 700;
+      }
+    }
+
+    #map {
+      width: 100%;
+      height: 320px;
+    }
+
+    #footer {
+      background-color: black;
+      width: 100%;
+      color: white;
+      padding: 20px;
+    }
+  }
+}

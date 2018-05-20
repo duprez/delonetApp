@@ -1,3 +1,89 @@
 page-home {
-
+  ion-header {
+    .toolbar-background {
+      background-color: #1d8fc7;
+    }
+    .toolbar-title-md,
+    .bar-button-default-md {
+      color: white;
+    }
+  }
+  .content-md {
+    background-color: rgb(255, 255, 255);
+  }
+  ion-content {
+      h1 {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+      }
+      .title-line {
+        background: linear-gradient(90deg, #1d8fc7 0%, #a31111 100%);
+        width: 70px;
+        height: 2px;
+      }
+      .welcome-text {
+        margin-top: 0.7rem;
+        text-align: justify;
+      }
+      ion-card {
+        ion-card-content {
+          .container-monitores {
+            position: relative;
+            & + .container-monitores {
+              margin-top: 40px;
+            }
+          }
+          .container-avatar-monitor {
+            max-width: 30%;
+            display: inline-block;
+            img {
+              border-radius: 70%;
+            }
+          }
+          .container-info-monitor {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            margin-left: 7px;
+            height: 100%;
+            h2 {
+              font-size: 1.9rem;
+              font-weight: 500;
+              color: #1d8fc7;
+            }
+            h3 {
+              font-size: 1.5rem;
+            }
+          }
+          .card-title-md {
+            color: #1d8fc7;
+            font-weight: 530;
+          }
+          .info {
+            color: black;
+            font-weight: 500;
+            float: right;
+            font-size: 1em;
+            margin: 10px 0;
+            text-transform: capitalize;
+            ion-icon {
+              margin-right: 0.7rem;
+            }
+          }
+        }
+      }
+  
+      ion-slides {
+        height: auto;
+        
+      }
+  
+    #footer {
+      background-color: black;
+      width: 100%;
+      color: white;
+      padding: 20px;
+    }
+  }
 }

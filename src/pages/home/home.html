@@ -7,12 +7,137 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <!-- Bienvenido a delonet -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <h1>Bienvenido a DELONET</h1>
+        <hr class="title-line">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 class="welcome-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum maximus enim eget venenatis. Donec risus ante, sollicitudin
+        convallis congue at, fringilla eu dui. Nulla eleifend, elit in porta faucibus, mi mi convallis orci, ac aliquam risus
+        neque non sapien.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Card one: Descuento 30% -->
+  <ion-card>
+    <img src="assets/imgs/index/mujer-piscina.jpg" />
+    <ion-card-content>
+      <ion-card-title>
+        Conviértete en Socio por solo 22€/mes
+      </ion-card-title>
+      <p>
+        Nunc molestie a mi quis rhoncus. Sed elementum, lorem vel luctus sollicitudin, lectus nisl eleifend leo, eu hendrerit eros
+        nisi vel lacus. Curabitur nec bibendum dui.
+      </p>
+      <button ion-button clear class="info">
+        <ion-icon name="information-circle"></ion-icon>
+        Más información
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <!-- Card two: Descuento 60% en material -->
+  <ion-card>
+    <img src="assets/imgs/index/hombre-nadando.jpg" />
+    <ion-card-content>
+      <ion-card-title>
+        50% de descuento en Aquagym
+      </ion-card-title>
+      <p>
+        Aliquam tristique quis enim varius vehicula. Integer a nunc varius, faucibus sem vitae, scelerisque tellus. Nunc egestas
+        libero vitae bibendum sollicitudin. Morbi egestas quis purus a dignissim.
+      </p>
+      <button ion-button clear class="info">
+        <ion-icon name="information-circle"></ion-icon>
+        Más información
+      </button>
+    </ion-card-content>
+  </ion-card>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <!-- Global card + Styling Monitores -->
+  <ion-card>
+    <ion-card-content>
+      <div class="container-monitores" *ngFor="let monitor of monitores">
+        <div class="container-avatar-monitor">
+          <img src="assets/imgs/test_face_monitor.jpg">
+        </div>
+        <div class="container-info-monitor">
+          <h2> {{ monitor.nombre }} {{ monitor.apellidos }}</h2>
+          <h3> antonioduprezher@gmail.com </h3>
+          <h3>{{ monitor.telefono }}</h3>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <!-- Slide: Clases disponibles -->
+  <ion-slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <img src="../../assets/imgs/clases/carruselaltaintensidad.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/imgs/clases/carruselcardiovascular.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/imgs/clases/carruselcoreografiadas.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/imgs/clases/carruselcuerpoymente.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/imgs/clases/carruseltonifiacicon.jpg">
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Footer: Contacto y Avisos legales -->
+
+  <ion-grid id="footer">
+    <ion-row text-center>
+      <ion-col>
+        <span>Some Text</span>
+      </ion-col>
+      <ion-col>
+        <span>Avios legal</span>
+      </ion-col>
+      <ion-col>
+        FAQ
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-9>
+        <ion-row>
+          <ion-col>
+            Copyright © {{ copyright.getFullYear() }} delonet
+            <br> Todos los derechos reservados
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            622623626 / 950312356
+            <br> C/ Azahar 51, Aguadulce, Almería
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3>
+        <ion-row>
+          <ion-col>a</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>a</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>a</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>a</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
