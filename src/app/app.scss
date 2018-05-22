@@ -1,4 +1,7 @@
 ion-menu {
+  .scroll-content {
+    overflow: hidden;
+  }
   ion-header {
     .toolbar-background {
       background-color: white;
