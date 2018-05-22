@@ -1,41 +1,63 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { Component, ViewChild } from "@angular/core";
+import { Nav, Platform, MenuController } from "ionic-angular";
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { ContactPage } from '../pages/contact/contact';
-import { LoginPage } from '../pages/login/login';
+import { HomePage } from "../pages/home/home";
+import { ListPage } from "../pages/list/list";
+import { ContactPage } from "../pages/contact/contact";
+import { LoginPage } from "../pages/login/login";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html"
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  private submenu: boolean;
+  pages: Array<{
+    title: string;
+    component: any;
+    icon: string;
+    back?: string;
+  }>;
 
-  pages: Array<{title: string, component: any, icon: string, subpages: any}>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public menuCtrl: MenuController
+  ) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Inicio', component: HomePage, icon: 'home', subpages: [] },
-      { title: 'Administrar', component: "", icon: 'person', 
-        subpages: [
-          {
-            name: "Socio", component: LoginPage
-          }
-        ]  },
-      { title: 'Contacto', component: ContactPage, icon: 'contact', subpages: [] },
-      { title: 'Conectarme', component: LoginPage, icon: 'logo-android', subpages: [] }
-    ];
-
+    this.getMainMenu();
   }
 
+  getMainMenu() {
+    // used for an example of ngFor and navigation
+    this.pages = [
+      {
+        title: "Inicio",
+        component: HomePage,
+        icon: "home"
+      },
+      {
+        title: "Administrar",
+        component: "",
+        icon: "person"
+      },
+      {
+        title: "Contacto",
+        component: ContactPage,
+        icon: "contact"
+      },
+      {
+        title: "Conectarme",
+        component: LoginPage,
+        icon: "logo-android"
+      }
+    ];
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -48,8 +70,32 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    if (page.length) {
+    this.submenu = false;
+    if (page && page.component.length > 0) {
+      this.getMainMenu();
       this.nav.setRoot(page.component);
+      this.menuCtrl.close();
+    } else {
+      if (page.title === "Administrar") {
+        this.submenu = true;
+        this.pages = [
+          {
+            title: "Socio",
+            component: LoginPage,
+            icon: "person",
+            back: "goBack"
+          }
+        ];
+        this.menuCtrl.enable(true);
+        this.menuCtrl.open();
+      }
     }
+  }
+
+  closeSubmenu() {
+    this.submenu = false;
+    this.getMainMenu();
+    this.menuCtrl.enable(true);
+    this.menuCtrl.open();
   }
 }

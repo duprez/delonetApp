@@ -15,15 +15,16 @@ ion-menu {
     ion-list {
       height: 100vh;
       background-color: #1d8fc7;
+      .menu-icons {
+        font-size: 1.5em;
+        vertical-align: bottom;
+        margin-right: 1rem;
+        width: 18px;
+      }
       .item-md {
         background-color: #1d8fc7;
         color: white;
-        .menu-icons {
-          font-size: 1.5em;
-          vertical-align: bottom;
-          margin-right: 1rem;
-          width: 18px;
-        }
+        
       }
       ion-item.item-md {
         .avatar-image {

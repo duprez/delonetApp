@@ -14,9 +14,14 @@
         <h2 id="name-user">Antonio Duprez</h2>
       </ion-item>
 
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-item>
+        <ion-icon class="menu-icons" *ngIf="submenu" name="arrow-back" (click)="closeSubmenu()" float-left></ion-icon>
+      </ion-item>
+
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon class="menu-icons" [name]="p.icon"></ion-icon>
         {{p.title}}
+        <ion-icon class="menu-icons" *ngIf="p.component.length <= 0" name="arrow-forward" float-right></ion-icon>
       </button>
 
       <button menuClose ion-item  class="icon-logout" (click)="finishSesion()">
