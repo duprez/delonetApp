@@ -1,0 +1,27 @@
+page-reserve {
+  ion-header {
+    .toolbar-background {
+      background-color: #1d8fc7;
+    }
+    .toolbar-title-md,
+    .bar-button-default-md {
+      color: white;
+    }
+  }
+  .content-md {
+    background-color: rgb(255, 255, 255);
+  }
+  .intro-text {
+    font-size: 1.7;
+    font-weight: 500;
+    & > h3 {
+      & > span {
+        color: #1d8fc7;
+        padding: 5px;
+      }
+      & > ion-icon {
+        vertical-align: top;
+      }
+    }
+  }
+}
