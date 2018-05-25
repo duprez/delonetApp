@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { CalendarModule } from 'angular-calendar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactPage } from '../pages/contact/contact';
 import { LoginPage } from '../pages/login/login';
 import { ReservePage } from '../pages/reserve/reserve';
+
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { ReservePage } from '../pages/reserve/reserve';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    CalendarModule.forRoot()
+    NgCalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
