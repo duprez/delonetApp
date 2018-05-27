@@ -14,8 +14,14 @@ import { ContactPage } from '../pages/contact/contact';
 import { LoginPage } from '../pages/login/login';
 import { ReservePage } from '../pages/reserve/reserve';
 
-import { NgCalendarModule  } from 'ionic2-calendar';
-
+import { CustomEventTitleFormatterProvider } from '../providers/custom-event-title-formatter/custom-event-title-formatter';
+import { CustomDateFormatterProvider } from '../providers/custom-date-formatter/custom-date-formatter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, CalendarDateFormatter, CalendarEventTitleFormatter } from 'angular-calendar';
+import { CalendarWeekHoursViewModule } from 'angular-calendar-week-hours-view';
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -28,8 +34,10 @@ import { NgCalendarModule  } from 'ionic2-calendar';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    BrowserAnimationsModule,
     HttpClientModule,
-    NgCalendarModule
+    CalendarModule.forRoot(),
+    CalendarWeekHoursViewModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +51,9 @@ import { NgCalendarModule  } from 'ionic2-calendar';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataMonitorProvider
+    DataMonitorProvider,
+    CustomEventTitleFormatterProvider,
+    CustomDateFormatterProvider
   ]
 })
 export class AppModule {}
