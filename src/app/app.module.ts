@@ -21,6 +21,9 @@ import { CalendarModule, CalendarDateFormatter, CalendarEventTitleFormatter } fr
 import { CalendarWeekHoursViewModule } from 'angular-calendar-week-hours-view';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { SocioPage } from '../pages/socio/socio';
+import { DataSocioProvider } from '../providers/data-socio/data-socio';
+import { SocioFormPage } from '../pages/socio-form/socio-form';
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -29,7 +32,9 @@ registerLocaleData(localeEs);
     HomePage,
     ContactPage,
     LoginPage,
-    ReservePage
+    SocioPage,
+    ReservePage,
+    SocioFormPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,9 @@ registerLocaleData(localeEs);
     HomePage,
     ContactPage,
     LoginPage,
-    ReservePage
+    SocioPage,
+    ReservePage,
+    SocioFormPage
   ],
   providers: [
     StatusBar,
@@ -53,7 +60,8 @@ registerLocaleData(localeEs);
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataMonitorProvider,
     CustomEventTitleFormatterProvider,
-    CustomDateFormatterProvider
+    CustomDateFormatterProvider,
+    DataSocioProvider
   ]
 })
 export class AppModule {}

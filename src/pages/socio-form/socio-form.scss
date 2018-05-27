@@ -1,0 +1,32 @@
+page-socio-form {
+    .toolbar-background {
+        background-color: #1d8fc7;
+      }
+      .toolbar-title-md,
+      .bar-button-default-md {
+        color: white;
+      }
+      .content-md {
+        background-color: rgb(255, 255, 255);
+      }
+      #arrow-back-icon {
+        background-color: #1d8fc7;
+        box-shadow: none;
+        font-size: 1.8rem;
+      }
+      #socio-title {
+          position: relative;
+          top: 6px;
+      }
+    ion-content {
+       .container-input {
+            padding: 0 25px;
+            margin: 7px 0;
+        }
+        .container-actions {
+            padding: 0 25px;
+            margin-top: 30px;
+            float: right;
+        }
+    }
+}

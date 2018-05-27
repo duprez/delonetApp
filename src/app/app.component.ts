@@ -7,6 +7,7 @@ import { HomePage } from "../pages/home/home";
 import { ContactPage } from "../pages/contact/contact";
 import { LoginPage } from "../pages/login/login";
 import { ReservePage } from "../pages/reserve/reserve";
+import { SocioPage } from "../pages/socio/socio";
 
 @Component({
   templateUrl: "app.html"
@@ -14,7 +15,7 @@ import { ReservePage } from "../pages/reserve/reserve";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ReservePage; // Página que se mostrará nada más iniciar la APP
+  rootPage: any = SocioPage; // Página que se mostrará nada más iniciar la APP
   private submenu: boolean;
   pages: Array<{
     title: string;
@@ -86,7 +87,7 @@ export class MyApp {
         this.pages = [
           {
             title: "Socio",
-            component: LoginPage,
+            component: SocioPage,
             icon: "person",
             back: "goBack"
           }
