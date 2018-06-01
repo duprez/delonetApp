@@ -6,7 +6,6 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { HomePage } from "../pages/home/home";
 import { ContactPage } from "../pages/contact/contact";
 import { LoginPage } from "../pages/login/login";
-import { ReservePage } from "../pages/reserve/reserve";
 import { SocioPage } from "../pages/socio/socio";
 
 @Component({
@@ -46,11 +45,6 @@ export class MyApp {
         title: "Administrar",
         component: "",
         icon: "person"
-      },
-      {
-        title: "Reservar",
-        component: ReservePage,
-        icon: "calendar"
       },
       {
         title: "Contacto",
