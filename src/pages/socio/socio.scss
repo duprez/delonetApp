@@ -1,0 +1,48 @@
+page-socio {
+    ion-header {
+        .toolbar-background {
+          background-color: #1d8fc7;
+        }
+        .toolbar-title-md,
+        .bar-button-default-md {
+          color: white;
+        }
+        #socios-title{
+            position: relative;
+            top: 9px;
+        }
+        #add-socio {
+            background-color: #1d8fc7;
+            box-shadow: none;
+            padding: 0 0.9em;
+            font-size: 1.8rem;
+        }
+        .list-md, ion-list {
+            margin: 0;
+            ion-item, .item-md {
+                background-color: black;
+                padding-left: 25px;
+                .label {
+                    color: white;
+                }
+                .text-input, .text-input-md {
+                    color: white;
+                }
+            }
+        }
+      }
+      .content-md {
+        background-color: rgb(255, 255, 255);
+      }
+    ion-content {
+        ion-card {
+            padding: 18px;
+            .name-socio {
+                font-size: 1.9rem;
+            }
+            ion-icon, .icon-arrow {
+                font-size: 1.7em;
+            }
+        }
+    }
+}

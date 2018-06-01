@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span id="socios-title">Socios</span>
+      <button ion-button id="add-socio" float-right (click)="addSocio()">
+          <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-title>
+  </ion-navbar>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="search" style="margin-right: 5px"></ion-icon>
+        <span>Nombre, apellidos, direccion</span>
+      </ion-label>
+      <ion-input type="text" (keyup)="onFilter($event)"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let socio of filteredSocios">
+    <ion-card-header>
+      <span class="name-socio">{{ socio.nombre }} {{ socio.apellidos}}</span>
+      <span float-right>{{ socio.id_socio }}</span>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        {{ socio.direccion }}
+      </div>
+      <div>
+        {{ socio.telefono }}
+      </div>
+      <ion-icon name="arrow-forward" class="icon-arrow" float-right (click)="modifySocio(socio)"></ion-icon>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

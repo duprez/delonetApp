@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <button id="arrow-back-icon" ion-button (click)="goToSocios()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </button>
+      <span id="socio-title"><span>Socio </span>
+      <span *ngIf="socio">{{ socio.id_socio }}</span></span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="socioForm">
+  <form novalidate [formGroup]="socioForm">
+    <ion-item class="container-input">
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item class="container-input">
+      <ion-label floating>Apellidos</ion-label>
+      <ion-input type="text" formControlName="apellidos"></ion-input>
+    </ion-item>
+    <ion-item class="container-input">
+      <ion-label floating>Direccion</ion-label>
+      <ion-input type="text" formControlName="direccion"></ion-input>
+    </ion-item>
+    <ion-item class="container-input">
+      <ion-label floating>Teléfono</ion-label>
+      <ion-input type="text" formControlName="telefono"></ion-input>
+    </ion-item>
+    <ion-item class="container-input">
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item class="container-input">
+      <ion-label floating>Fecha de alta</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" formControlName="fecha_alta"></ion-datetime>
+    </ion-item>
+    <ion-item class="container-input">
+        <ion-label floating>Fecha de baja</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" formControlName="fecha_baja"></ion-datetime>
+    </ion-item>
+    <div class="container-actions">
+        <button type="button" (click)="onSubmit()" [disabled]="false" ion-button>Guardar</button>
+        <button type="button" (click)="onDelete()" [disabled]="false" ion-button>Borrar</button>
+    </div>
+  </form>
+</ion-content>
