@@ -34,8 +34,9 @@ export class SocioFormPage {
         direccion: [this.socio.direccion, Validators.required],
         telefono: [this.socio.telefono, Validators.required],
         fecha_alta: [this.socio.fecha_alta, Validators.required],
-        fecha_baja: [ this.socio.fecha_baja, Validators.required]  ,
-        id_clase: [this.socio.id_clase]         
+        fecha_baja: [ this.socio.fecha_baja, Validators.required],
+        id_clase: [this.socio.id_clase],
+        email: [this.socio.email, Validators.required]         
       });
     } else {
       this.socioForm = this.fb.group({
@@ -46,7 +47,8 @@ export class SocioFormPage {
         telefono: ['', Validators.required],
         fecha_alta: ['', Validators.required],
         fecha_baja: [ '', Validators.required]  ,
-        id_clase: ['']         
+        id_clase: [''],
+        email: ['', Validators.required]  
       });
     }
 

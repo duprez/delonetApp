@@ -1,7 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Socio } from '../../models/Socio.model';
 import { Observable } from 'rxjs/observable';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class DataSocioProvider {
@@ -25,8 +29,10 @@ export class DataSocioProvider {
       fecha_alta: socio.fecha_alta,
       fecha_baja: socio.fecha_baja,
       telefono: socio.telefono,
-      id_clase: socio.id_clase  
-    });
+      id_clase: socio.id_clase,
+      email: socio.email
+    }, httpOptions
+    );
   }
 
   createSocio(socio) {
@@ -37,7 +43,8 @@ export class DataSocioProvider {
       fecha_alta: socio.fecha_alta,
       fecha_baja: socio.fecha_baja,
       telefono: socio.telefono,
-      id_clase: socio.id_clase   
+      id_clase: socio.id_clase,
+      email: socio.email 
     });
   }
 

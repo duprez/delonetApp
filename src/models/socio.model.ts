@@ -6,5 +6,6 @@ export interface Socio {
     fecha_alta: Date;
     fecha_baja: Date;
     telefono: String;
+    email: String;
     id_clase: number;
 }
